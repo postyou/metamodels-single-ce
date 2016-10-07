@@ -41,7 +41,7 @@ class tl_content_mm_single extends \Backend
                                                     tl_metamodel_attribute.pid=tl_metamodel.id AND
                                                     tl_metamodel_attribute.identifierCol='1' 
                                              ")->execute($dc->activeRecord->article);
-            if($dbRes && count($dbRes)>0){
+            if($dbRes->count($dbRes)){
                 $dbRes2=$dc->Database->execute("SELECT id,".$dbRes->colname." FROM ".$dbRes->tableName)->fetchAllAssoc();
                 if($dbRes2){
                     foreach ($dbRes2 as $row){
